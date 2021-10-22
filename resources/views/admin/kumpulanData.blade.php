@@ -16,7 +16,7 @@
                                 <th class="w-auto text-center py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody class="text-gray-700 text-black">
+                        <tbody class="text-gray-700">
 
                             @foreach ($datas as $data)
                             <tr>

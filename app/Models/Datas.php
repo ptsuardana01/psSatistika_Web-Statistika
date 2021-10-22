@@ -19,12 +19,14 @@ class Datas extends Model
         return $data;
     }
 
+
     public static function max()
     {
         $data = DB::table('datas')
             ->max('value');
         return $data;
     }
+
 
     public static function avg()
     {
@@ -41,12 +43,14 @@ class Datas extends Model
         return $res;
     }
 
+
     public static function jmlKelas()
     {
         $data = ModelDatas::all()->count();
         $res = ceil(1 + (3.3 * log($data, 10)));
         return $res;
     }
+
 
     public static function pjgKelas()
     {
@@ -55,6 +59,7 @@ class Datas extends Model
         $res = ceil($j / $k);
         return $res;
     }
+
 
     public static function getFreqTable()
     {
@@ -75,4 +80,34 @@ class Datas extends Model
         }
         return $res;
     }
+
+
+    public static function getDataBergolong()
+    {
+        $jmlKelas = ModelDatas::jmlKelas();
+        $pjgKelas = ModelDatas::pjgKelas();
+        $min = ModelDatas::min();
+
+        $arr = [];
+        for ($i = 0; $i < $jmlKelas; $i++) {
+            array_push($arr, [
+                'end' => $min + ($pjgKelas * $i),
+                'begin' => $min + ($pjgKelas * ($i + 1)) - 1,
+            ]);
+        }
+
+        $res = [];
+        foreach ($arr as $a) {
+            array_push($res, [
+                "end" => $a['end'],
+                "begin" => $a['begin'],
+                "freq" => DB::table('datas')
+                    ->where('value', '>=', $a['end'])
+                    ->where('value', '<=', $a['begin'])
+                    ->count(),
+            ]);
+        }
+        return $res;
+    }
+
 }

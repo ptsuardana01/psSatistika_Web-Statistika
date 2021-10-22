@@ -18,6 +18,4 @@ Route::get('/', [AppController::class, 'index'])->name('kumpulanData');
 
 Route::get('/tabel-frekuensi', [AppController::class, 'tabelFrekuensi'])->name('tabelFrekuensi');
 
-Route::get('/data-bergolong', function () {
-    return view('admin.dataBergolong');
-})->name('dataBergolong');
+Route::get('/data-bergolong', [AppController::class, 'dataBergolong'])->name('dataBergolong');
