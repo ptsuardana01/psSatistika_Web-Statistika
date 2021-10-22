@@ -10,12 +10,11 @@
             <div class="overflow-hidden sm:rounded-lg grid sm:grid-cols-1 lg:grid-cols-4 gap-4">
                 <!-- tabel data -->
                 <div class="p-5 bg-blue-500 border-b border-gray-200 rounded-lg shadow-sm grid lg:col-span-2 lg:col-start-2">
-                    <form action="{{ route('updateData') }}" method="POST" class="p-10 bg-white rounded-lg">
+                    <form action="{{ route('updateData',["id"=>$data['id']]) }}" method="POST" class="p-10 bg-white rounded-lg">
                         @csrf
                         @method('put')
                         <div>
                             <label class="block text-gray-700" for="value">Data</label>
-                            <input type="hidden" name="id" value="{{ $data['id'] }}">
                             <input class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="value" name="value" type="number"
                                 required placeholder="Masukkan Data" aria-label="Skor" value="{{$data['value']}}" autofocus>
                         </div>

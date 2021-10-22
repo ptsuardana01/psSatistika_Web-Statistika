@@ -12,9 +12,9 @@ class AppController extends Controller
     public function index()
     {
         $datas = Datas::paginate(10);
-            return view('admin.kumpulanData', [
-                'datas' => $datas
-            ]);
+        return view('admin.kumpulanData', [
+            'datas' => $datas
+        ]);
     }
 
 
@@ -46,7 +46,7 @@ class AppController extends Controller
         $pjgKelas = Datas::pjgKelas();
 
         $data = Datas::getDataBergolong();
-        return view ('admin.dataBergolong', [
+        return view('admin.dataBergolong', [
             'min' => $min,
             'max' => $max,
             'avg' => $avg,
@@ -72,18 +72,18 @@ class AppController extends Controller
     }
 
 
-    public function destroy(Request $req)
+    public function destroy($id)
     {
-        $data = Datas::find($req->id);
+        $data = Datas::find($id);
         $data->delete($data);
         return back();
     }
 
 
-    public function update(Request $req)
+    public function update(Request $req, $id)
     {
-        $data = Datas::find($req->id);
-        $data->data = $req->data;
+        $data = Datas::find($id);
+        $data->value = $req->value;
         $data->save();
         return redirect('/');
     }
@@ -93,8 +93,7 @@ class AppController extends Controller
     {
         $data = Datas::find($id);
         return view('admin.updateData', [
-            'value' => $data,
+            'data' => $data,
         ]);
     }
-
 }

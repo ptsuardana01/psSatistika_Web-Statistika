@@ -23,11 +23,10 @@
                                 <td class="w-1/3 text-center py-3 px-4">{{$data->value}}</td>
                                 <td class="w-1/3 text-center py-3 px-4">
                                     <div class="flex w-full justify-center">
-                                        <a href="{{ route('updateData') }}" class="mr-2 p-2 bg-yellow-300 text-sm rounded-md hover:bg-yellow-500 hover:text-white cursor-pointer">Update</a>
-                                        <form action="{{ route('deletedData')}}" onsubmit="return confirm('Anda yakin?')" method="POST" >
+                                        <a href="{{ route('updateData', ["id"=>$data['id']]) }}" class="mr-2 p-2 bg-yellow-300 text-sm rounded-md hover:bg-yellow-500 hover:text-white cursor-pointer">Update</a>
+                                        <form action="{{ route('deletedData', ["id"=>$data['id']])}}" onsubmit="return confirm('Anda yakin?')" method="POST" >
                                             @csrf
                                             @method('delete')
-                                            <input type="hidden" name="id" value="{{ $data['id'] }}">
                                             <button id="delete" type="submit" class="p-2 bg-red-300 text-sm rounded-md hover:bg-red-500 hover:text-white cursor-pointer">Delete</button>
                                         </form>
                                     </div>

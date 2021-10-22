@@ -23,9 +23,9 @@ Route::get('/data-bergolong', [AppController::class, 'dataBergolong'])->name('da
 Route::get('/tambah-data', [AppController::class, 'formTambahData'])->name('tambahData');
 Route::post('/tambah-data', [AppController::class, 'add'])->name('tambahData');
 
-Route::get('/update-data', [AppController::class, 'formUpdate'])->name('updateData');
-Route::put('/update-data', [AppController::class, 'update'])->name('updateData');
+Route::get('/update-data/{id}', [AppController::class, 'formUpdate'])->name('updateData');
+Route::put('/update-data/{id}', [AppController::class, 'update'])->name('updateData');
 
-Route::delete('/delete', [AppController::class, 'destroy'])->name('deletedData');
+Route::delete('/delete/{id}', [AppController::class, 'destroy'])->name('deletedData');
 
 
