@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.kumpulanData');
-})->name('kumpulanData');
+Route::get('/', [AppController::class, 'index'])->name('kumpulanData');
 
-Route::get('/tabel-frekuensi', function () {
-    return view('admin.tabelFrekuensi');
-})->name('tabelFrekuensi');
+Route::get('/tabel-frekuensi', [AppController::class, 'tabelFrekuensi'])->name('tabelFrekuensi');
 
 Route::get('/data-bergolong', function () {
     return view('admin.dataBergolong');
