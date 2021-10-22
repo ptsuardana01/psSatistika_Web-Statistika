@@ -75,7 +75,26 @@ class AppController extends Controller
     public function destroy(Request $req)
     {
         $data = Datas::find($req->id);
-        $data->delete();
+        $data->delete($data);
         return back();
     }
+
+
+    public function update(Request $req)
+    {
+        $data = Datas::find($req->id);
+        $data->data = $req->data;
+        $data->save();
+        return redirect('/');
+    }
+
+
+    public function formUpdate($id)
+    {
+        $data = Datas::find($id);
+        return view('admin.updateData', [
+            'value' => $data,
+        ]);
+    }
+
 }
