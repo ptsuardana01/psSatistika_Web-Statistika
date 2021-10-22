@@ -23,6 +23,6 @@ class adminDashboard extends Component
      */
     public function render()
     {
-        return view('layouts.admin-dashboard');
+        return view('components.admin-dashboard');
     }
 }
