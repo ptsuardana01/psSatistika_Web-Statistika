@@ -24,9 +24,9 @@
                                 <td class="w-1/3 text-center py-3 px-4">
                                     <div class="flex w-full justify-center">
                                         <a class="mr-2 p-2 bg-yellow-300 text-sm rounded-md hover:bg-yellow-500 hover:text-white cursor-pointer">Update</a>
-                                        <form action="" onsubmit="return confirm('Anda yakin?')" method="" >
-                                            {{-- @csrf --}}
-                                            {{-- @method('delete') --}}
+                                        <form action="" onsubmit="return confirm('Anda yakin?')" method="POST" >
+                                            @csrf
+                                            @method('delete')
                                             <button id="delete" type="submit" class="p-2 bg-red-300 text-sm rounded-md hover:bg-red-500 hover:text-white cursor-pointer">Delete</button>
                                         </form>
                                     </div>

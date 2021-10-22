@@ -57,4 +57,25 @@ class AppController extends Controller
             'data' => $data,
         ]);
     }
+
+
+    public function formTambahData()
+    {
+        return view('admin.tambahData');
+    }
+
+
+    public function add(Request $req)
+    {
+        Datas::create(['value' => $req->value]);
+        return redirect('tambah-data');
+    }
+
+
+    public function destroy(Request $req)
+    {
+        $data = Datas::find($req->id);
+        $data->delete();
+        return back();
+    }
 }

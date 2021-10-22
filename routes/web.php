@@ -19,3 +19,8 @@ Route::get('/', [AppController::class, 'index'])->name('kumpulanData');
 Route::get('/tabel-frekuensi', [AppController::class, 'tabelFrekuensi'])->name('tabelFrekuensi');
 
 Route::get('/data-bergolong', [AppController::class, 'dataBergolong'])->name('dataBergolong');
+
+Route::get('/tambah-data', [AppController::class, 'formTambahData'])->name('tambahData');
+Route::post('/tambah-data', [AppController::class, 'add'])->name('tambahData');
+
+
