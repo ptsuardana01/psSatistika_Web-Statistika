@@ -93,6 +93,14 @@
                     <i class="fas fa-table mr-3"></i>
                     Data Bergolong
                 </a>
+                <a href="{{route("chiKuadrat")}}" class="{{(request()->routeIs('chiKuadrat'))? 'active-nav-link' : ''}} Fflex items-center text-white py-2 pl-4 nav-item">
+                    <i class="fas fa-table mr-3"></i>
+                    Chi Kuadrat
+                </a>
+                <a href="{{route("lilliefors")}}" class="{{(request()->routeIs('lilliefors'))? 'active-nav-link' : ''}} Fflex items-center text-white py-2 pl-4 nav-item">
+                    <i class="fas fa-table mr-3"></i>
+                    Lilliefors
+                </a>
                 <a href="#" class="flex items-center text-white py-2 pl-4 nav-item">
                     <i class="fas fa-cogs mr-3"></i>
                     Support
