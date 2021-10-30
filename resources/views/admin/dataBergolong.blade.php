@@ -1,10 +1,11 @@
-<x-admin-dashboard>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Data Bergolong') }}
-        </h2>
-    </x-slot>
+@extends('components.admin-dashboard')
+    @section('header')
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('Data Bergolong') }}
+    </h2>
+    @endsection
 
+    @section('content')
     <div class="py-10">
         <div class="max-w-7xl mx-auto sm:px-2 lg:px-5">
             <div class="overflow-hidden sm:rounded-lg grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
@@ -69,4 +70,4 @@
             </div>
         </div>
     </div>
-</x-admin-dashboard>
+    @endsection

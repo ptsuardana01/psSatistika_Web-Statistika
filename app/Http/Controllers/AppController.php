@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DatasExport;
+use App\Imports\DatasImport;
+use App\Imports\SkorsImport;
 use App\Models\Datas;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
@@ -95,5 +99,52 @@ class AppController extends Controller
         return view('admin.updateData', [
             'data' => $data,
         ]);
+    }
+
+
+    public function chiKuadrat()
+    {
+        $jmlData = Datas::all()->count();
+        $data = Datas::getDataBergolong();
+        $avg = Datas::avg();
+        $sd = Datas::standarDeviasi();
+
+        return view('admin.chiKuadrat', [
+            'data' => $data,
+            'avg' => $avg,
+            'sd' => $sd,
+            'jmlData' => $jmlData,
+        ]);
+    }
+
+
+    public function lilliefors()
+    {
+        $jmlData = Datas::all()->count();
+        $data = Datas::getFreqTable();
+        $avg = Datas::avg();
+        $sd = Datas::standarDeviasi();
+        return view('admin.lilliefors', [
+            'data' => $data,
+            'avg' => $avg,
+            'sd' => $sd,
+            'jmlData' => $jmlData,
+        ]);
+    }
+
+
+    public function dataExport()
+    {
+        return Excel::download(new DatasExport, 'data.xlsx');
+    }
+
+
+    public function skorImport(Request $request)
+    {
+        $file = $request->file('file');
+        $namaFile = $file->getClientOriginalName();
+        $file->move('DataSkor', $namaFile);
+        Excel::import(new DatasImport, public_path('DataSkor/' . $namaFile));
+        return redirect('/');
     }
 }

@@ -41,6 +41,14 @@
                 <i class="fas fa-table mr-3"></i>
                 Data Bergolong
             </a>
+            <a href="{{route("chiKuadrat")}}" class="{{(request()->routeIs('chiKuadrat'))? 'active-nav-link' : ''}} flex items-center text-white hover:opacity-100 py-4 pl-6 nav-item rounded-l-full">
+                <i class="fas fa-table mr-3"></i>
+                Chi Kuadrat
+            </a>
+            <a href="{{route("lilliefors")}}" class="{{(request()->routeIs('lilliefors'))? 'active-nav-link' : ''}} flex items-center text-white hover:opacity-100 py-4 pl-6 nav-item rounded-l-full">
+                <i class="fas fa-table mr-3"></i>
+                Lilliefors
+            </a>
         </nav>
     </aside>
 
@@ -105,9 +113,9 @@
 
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-5">
-                <h1 class="text-3xl text-black pb-5">{{$header}}</h1>
+                <h1 class="text-3xl text-black pb-5">@yield('header')</h1>
 
-                {{$slot}}
+                @yield('content')
             </main>
 
             <footer class="w-full bg-white text-right p-4">

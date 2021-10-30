@@ -14,18 +14,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AppController::class, 'index'])->name('kumpulanData');
+Route::get('/', [AppController::class, 'index'])
+    ->name('kumpulanData');
 
-Route::get('/tabel-frekuensi', [AppController::class, 'tabelFrekuensi'])->name('tabelFrekuensi');
+Route::get('/tabel-frekuensi', [AppController::class, 'tabelFrekuensi'])
+    ->name('tabelFrekuensi');
 
-Route::get('/data-bergolong', [AppController::class, 'dataBergolong'])->name('dataBergolong');
+Route::get('/data-bergolong', [AppController::class, 'dataBergolong'])
+    ->name('dataBergolong');
 
-Route::get('/tambah-data', [AppController::class, 'formTambahData'])->name('tambahData');
-Route::post('/tambah-data', [AppController::class, 'add'])->name('tambahData');
+Route::get('chi-kuadrat', [AppController::class, 'chiKuadrat'])
+    ->name('chiKuadrat');
 
-Route::get('/update-data/{id}', [AppController::class, 'formUpdate'])->name('updateData');
-Route::put('/update-data/{id}', [AppController::class, 'update'])->name('updateData');
+Route::get('lilliefors', [AppController::class, 'lilliefors'])
+    ->name('lilliefors');
 
-Route::delete('/delete/{id}', [AppController::class, 'destroy'])->name('deletedData');
+Route::get('/tambah-data', [AppController::class, 'formTambahData'])
+    ->name('tambahData');
+Route::post('/tambah-data', [AppController::class, 'add'])
+    ->name('tambahData');
+
+Route::get('/update-data/{id}', [AppController::class, 'formUpdate'])
+    ->name('updateData');
+Route::put('/update-data/{id}', [AppController::class, 'update'])
+    ->name('updateData');
+
+Route::delete('/delete/{id}', [AppController::class, 'destroy'])
+    ->name('deletedData');
+
+
+Route::get('export-data', [AppController::class, 'dataExport'])
+    ->name('export-data');
+
+Route::post('import-skor', [AppController::class, 'skorImport'])
+    ->name('import-skor');
 
 

@@ -110,4 +110,21 @@ class Datas extends Model
         return $res;
     }
 
+
+    public static function standarDeviasi()
+    {
+        $allData = ModelDatas::all();
+        $sumData = $allData->sum('value');
+        // dd($sumData);
+        $jmlData = $allData->count();
+        $kuadratData = collect();
+        foreach ($allData as $a) {
+            $kuadratData->push($a->value * $a->value);
+        }
+        $sumKuadratData = $kuadratData->sum();
+
+        $res = sqrt(($sumKuadratData - (($sumData * $sumData) / $jmlData)) / ($jmlData - 1));
+        return $res;
+    }
+
 }
