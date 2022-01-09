@@ -50,6 +50,14 @@
                 <i class="fas fa-table mr-3"></i>
                 Lilliefors
             </a>
+            <a href="{{route("ujiT")}}" class="{{(request()->routeIs('ujiT'))? 'active-nav-link' : ''}} flex items-center text-white hover:opacity-100 py-4 pl-6 nav-item rounded-l-full">
+                <i class="fas fa-table mr-3"></i>
+                Uji T
+            </a>
+            <a href="{{route("anava")}}" class="{{(request()->routeIs('anava'))? 'active-nav-link' : ''}} flex items-center text-white hover:opacity-100 py-4 pl-6 nav-item rounded-l-full">
+                <i class="fas fa-table mr-3"></i>
+                Uji Anava 1 jalur
+            </a>
         </nav>
     </aside>
 

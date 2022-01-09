@@ -573,14 +573,18 @@ use App\Helpers\Main;
                                     -
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    Kesimpulan
+                                </td>
+                                <td>
+                                    <b>
+                                        H0 ditolak dan Ha diterima
+                                    </b>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-
-                    <div>
-                        <h1>Kesimpulan</h1>
-                        <p><b>H0 ditolak dan Ha diterima</b></p>
-                        
-                    </div>
                 </div>
             </div>
         </div>
