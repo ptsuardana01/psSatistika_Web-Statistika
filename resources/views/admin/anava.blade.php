@@ -5,7 +5,7 @@ use App\Helpers\Main;
 @extends('components.admin-dashboard')
     @section('header')
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ __('Uji T') }}
+        {{ __('Uji Anava 1 Jalur') }}
     </h2>
     @endsection
 
