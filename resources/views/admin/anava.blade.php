@@ -578,7 +578,8 @@ use App\Helpers\Main;
 
                     <div>
                         <h1>Kesimpulan</h1>
-                        <p><b>H0 ditolak dan Ha diterima</b></p> 
+                        <p><b>H0 ditolak dan Ha diterima</b></p>
+                        
                     </div>
                 </div>
             </div>
