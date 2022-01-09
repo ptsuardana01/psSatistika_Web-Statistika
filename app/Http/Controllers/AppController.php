@@ -132,6 +132,34 @@ class AppController extends Controller
         ]);
     }
 
+    public function ujiT()
+    {
+        $jmlData = Datas::all()->count();
+        $data = Datas::getFreqTable();
+        $avg = Datas::avg();
+        $sd = Datas::standarDeviasi();
+        return view('admin.ujiT', [
+            'data' => $data,
+            'avg' => $avg,
+            'sd' => $sd,
+            'jmlData' => $jmlData,
+        ]);
+    }
+
+    public function anava()
+    {
+        $jmlData = Datas::all()->count();
+        $data = Datas::getFreqTable();
+        $avg = Datas::avg();
+        $sd = Datas::standarDeviasi();
+        return view('admin.anava', [
+            'data' => $data,
+            'avg' => $avg,
+            'sd' => $sd,
+            'jmlData' => $jmlData,
+        ]);
+    }
+
 
     public function dataExport()
     {

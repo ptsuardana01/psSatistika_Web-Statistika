@@ -101,6 +101,14 @@
                     <i class="fas fa-table mr-3"></i>
                     Lilliefors
                 </a>
+                <a href="{{route("ujiT")}}" class="{{(request()->routeIs('ujiT'))? 'active-nav-link' : ''}} Fflex items-center text-white py-2 pl-4 nav-item">
+                    <i class="fas fa-table mr-3"></i>
+                    Uji T
+                </a>
+                <a href="{{route("anava")}}" class="{{(request()->routeIs('anava'))? 'active-nav-link' : ''}} Fflex items-center text-white py-2 pl-4 nav-item">
+                    <i class="fas fa-table mr-3"></i>
+                    Uji Anava 1 jalur
+                </a>
                 <a href="#" class="flex items-center text-white py-2 pl-4 nav-item">
                     <i class="fas fa-cogs mr-3"></i>
                     Support

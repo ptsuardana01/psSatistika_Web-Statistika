@@ -29,6 +29,12 @@ Route::get('chi-kuadrat', [AppController::class, 'chiKuadrat'])
 Route::get('lilliefors', [AppController::class, 'lilliefors'])
     ->name('lilliefors');
 
+Route::get('ujiT', [AppController::class, 'ujiT'])
+    ->name('ujiT');
+
+Route::get('anava', [AppController::class, 'anava'])
+    ->name('anava');
+
 Route::get('/tambah-data', [AppController::class, 'formTambahData'])
     ->name('tambahData');
 Route::post('/tambah-data', [AppController::class, 'add'])
@@ -48,5 +54,3 @@ Route::get('export-data', [AppController::class, 'dataExport'])
 
 Route::post('import-skor', [AppController::class, 'skorImport'])
     ->name('import-skor');
-
-
